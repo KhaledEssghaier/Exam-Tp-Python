@@ -1,9 +1,10 @@
-from fastapi import FastAPI, Depends, HTTPException
+from fastapi import FastAPI, Depends, HTTPException ,status
 from sqlalchemy.orm import Session, joinedload
 from sqlalchemy import func
 from . import models, schemas
 from .database import Base, engine, SessionLocal
 from .langchain_utils import get_summary_llm
+from typing import Optional
 
 Base.metadata.create_all(bind=engine)
 

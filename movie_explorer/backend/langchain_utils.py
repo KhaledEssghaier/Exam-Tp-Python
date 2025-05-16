@@ -23,7 +23,7 @@ def generate_summary_prompt(movie):
     )
 
 def get_summary_llm(movie):
-    llm = ChatGroq(api_key=os.getenv("GROQ_API_KEY"), model_name="meta-llama/llama-guard-4-12b")
+    llm = ChatGroq(api_key=os.getenv("GROQ_API_KEY"), model_name="llama3-8b-8192")
     prompt_template = PromptTemplate.from_template(
         "Generate a short, engaging summary for the movie '{title}' ({year}), directed by {director} and starring {actors}."
     )
